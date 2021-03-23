@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+:root {
+  --color--1: rgb(27, 58, 36);
+  --color--2: rgb(0, 107, 61);
+  --color--3: rgb(21, 140, 75);
+  --color--4: rgb(10, 84, 69);
+  --color--5: rgb(0, 61, 55);
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 61, 55, 0.6), rgba(0, 61, 55, 0.4)),
+    url(/bg.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Montserrat", "sans-serif";
+  text-align: center;
+}
+
+h1 {
+  color: #fff;
+  margin-top: 15vh;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background-color: var(--color--4);
+  color: #fff;
+  margin: auto;
+  margin-top: 15vh;
+  position: relative;
+  transform: scale(1);
+}
+
+.circle {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background-color: var(--color--4);
+  position: absolute;
+}
+
+h3 {
+  z-index: 2;
+  font-size: 25px;
+  font-weight: 100;
+}
+
+.gradient {
+  background: conic-gradient(
+    #55b7a4 0%,
+    #4ca493 40%,
+    #fff 40%,
+    #fff 60%,
+    #336d62 60%,
+    #2a5b52 100%
+  );
+  width: 370px;
+  height: 370px;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  z-index: -1;
+}
+
+.pointer-container {
+  position: absolute;
+  top: -30px;
+  left: 165px;
+  width: 20px;
+  height: 205px;
+  background-color: transparent;
+  z-index: 3;
+  animation: rotate 7.5s linear forwards infinite;
+  transform-origin: bottom;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pointer {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.container.grow {
+  animation: grow 3s linear forwards;
+}
+
+@keyframes grow {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}
+
+.container.shrink {
+  animation: shrink 3s linear forwards;
+}
+
+@keyframes shrink {
+  from {
+    transform: scale(1.2);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
